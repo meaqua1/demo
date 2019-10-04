@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <script>
+        var reg = new RegExp("\\w{6,12}");
+        var reg = /^\w{6,12}$/;
+        var username = "zhangsan";
+        var f = reg.test(username);
+        alert(f);
+
+        var date = new Date();
+        document.write(date+"<br>");
+        document.write(date.toLocaleTimeString()+"<br>");
+        document.write(date.getTime());
+        var arr = new Array(1,2,3);
+        var arr1 = [1,2,3];
+        arr[10] = 4;
+        arr.push(5,6);
+        alert(arr.join("--"))
+        document.write("<table>");
+        for (var i = 1; i <= 9; i++) {
+            document.write("</tr>");
+            for (var j = 1; j <= i; j++) {
+                document.write("<td>")
+                document.write(i + "*" + j +"="+ i*j + "&nbsp;&nbsp;&nbsp;&nbsp;");
+                document.write("</td>")
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        function fun() {
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum+=arguments[i];
+            }
+            return sum;
+        }
+
+        var sum = fun(3,4,5,6,7);
+        alert(sum);
+    </script>
+</head>
+<body>
+
+<table width="100%" align="center">
+    <tr>
+        <td>
+            <img src="../collection_pic.jpg">
+        </td>
+    </tr>
+</table>
+<table border="1" cellspacing="0" width="500px">
+    <caption>信息表</caption>
+    <tr>
+        <th rowspan="2">编号</th>
+        <th>姓名</th>
+        <th>成绩</th>
+        <!--<td>编号</td>
+        <td>姓名</td>
+        <td>成绩</td>-->
+    </tr>
+    <tr align="center">
+        <td>1</td>
+        <td>张三</td>
+        <td>50</td>
+    </tr>
+    <tr align="center">
+        <td>2</td>
+        <td>李四</td>
+        <td>60</td>
+    </tr>
+</table>
+<form action="#" method="get">
+    <label for="username">用户名：</label><input name="username" id="username" placeholder="请输入账号"><br>
+    密码：<input type="password" name="password"><br>
+    性别：<input type="radio" value="man" name="gender" checked="checked">男
+    <input type="radio" value="woman" name="gender">女<br>
+    爱好：<input type="checkbox" value="music" name="hobby">音乐
+    <input type="checkbox" value="book" name="hobby">读书
+    <input type="checkbox" value="game" name="hobby">游戏
+    <input type="date" name="bir">
+    <input type="datetime-local" name="bir">
+    省份：
+    <select name="shengfen">
+        <option>请选择</option>
+        <option>北京</option>
+        <option>上海</option>
+    </select><br>
+    自我介绍
+    <textarea name="ziji" cols="20" rows="8"></textarea>
+    <input type="submit" value="登录"><br>
+    <input type="image" src="../collection_pic.jpg"><br>
+</form>
+
+<form action="#" method="get">
+    <table align="center"   >
+        <tr>
+            <td><label for="username1">用户名</label></td>
+            <td><input name="username" id="username1" placeholder="请输入账号"></td>
+        </tr>
+        <tr>
+            <td><label for="password1">密码</label></td>
+            <td><input type="password" name="password" id="password1" placeholder="请输入密码"></td>
+        </tr>
+        <tr>
+            <td><label for="email">邮箱</label></td>
+            <td><input type="email" name="email" id="email" placeholder="请输入邮箱"></td>
+        </tr>
+        <tr>
+            <td><label for="name">姓名</label></td>
+            <td><input name="name" id="name" placeholder="请输入姓名"></td>
+        </tr>
+        <tr>
+            <td><label>性别</label></td>
+            <td><input type="radio" name="gender" value="man">男
+                <input type="radio" name="gender" value="woman">女
+            </td>
+        </tr>
+        <tr>
+            <td><label for="birthday">日期</label></td>
+            <td><input type="date" name="birthday" id="birthday"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="注册"></td>
+        </tr>
+    </table>
+
+</form>
+
+
+<table border="1">
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+</body>
+</html>

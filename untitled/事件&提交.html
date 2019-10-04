@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .over{
+            background-color: pink;
+        }
+    </style>
+    <script>
+        /*加载完成事件*/
+        window.onload = function (ev) {
+            var input1 = document.getElementById("input1");
+            var se1 = document.getElementById("se1");
+            var div = document.getElementById("div");
+
+            /*input1.onblur=function (ev) {
+                div.innerHTML+="<span style=\"float: left;color: red\">你好</span>";
+            }
+            input1.onfocus=function (ev) {
+                alert("yyy")
+            }*/
+            /*鼠标移动到标签事件*/
+            /*input1.onmouseover=function (ev1) {
+                alert("鼠标移过来了")
+            }*/
+            /*鼠标点击事件*/
+            /*input1.onmousedown=function (ev1) {
+                alert(ev1.button)
+            }*/
+            /*键盘按下事件*/
+            /*input1.onkeydown=function (ev1) {
+                alert(ev1.keyCode)/!*回车返回13*!/
+            }*/
+            /*文本改变事件*/
+            se1.onchange=function (ev1) {
+                alert("文本改变了")
+            }
+            var tr = document.getElementById("tr")
+            tr.onmouseover=function (ev1) {
+                this.className="over";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form action="#" method="get" onsubmit="return check();">
+        <div id="div">
+        <input id="input1" name="user" style="float: left">
+        <input type="submit" value="提交">
+        </div>
+    </form>
+
+    <table>
+        <tr id="tr">
+            <td>aaaaa</td>
+        </tr>
+    </table>
+
+
+    <select id="se1">
+        <option>请选择</option>
+        <option>北京</option>
+        <option>上海</option>
+    </select>
+
+    <script>
+        function check() {
+            var flag = false;
+            return flag;
+
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border: 1px solid red;
+            height: 100px;
+            width: 100px;
+        }
+        #div3{
+            border: 1px solid blue;
+            height: 100px;
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="p" style="color: red">aaa</p>
+    <input type="button" id="but" value="点我">
+    <input type="button" id="but1" value="点我消除">
+
+    <div id="div1">
+        div1
+        <div id="div2">
+            div2
+        </div>
+    </div>
+    <a href="javascript:void (0);" id="a1">删除子节点</a>
+    <a href="javascript:void (0);" id="a2">添加子节点</a>
+
+    <script>
+        var p = document.getElementById("p");
+        var but = document.getElementById("but");
+        var but1 = document.getElementById("but1");
+        var a1 = document.getElementById("a1");
+        var a2 = document.getElementById("a2");
+        var div1 = document.getElementById("div1");
+        var div2 = document.getElementById("div2");
+        var attribute = p.getAttribute("style");
+        alert(attribute)
+
+        but.onclick = function (ev) {
+            p.setAttribute("style","color: blue")
+        }
+        but1.onclick = function (ev) {
+            p.removeAttribute("style")
+            but.setAttribute("type","radio")
+        }
+
+        a1.onclick=function (ev) {
+            div1.removeChild(div2);
+        }
+        a2.onclick = function (ev) {
+            var div3 = document.createElement("div3");
+            div3.setAttribute("id","div3");
+            div2.appendChild(div3);
+        }
+
+    </script>
+</body>
+</html>

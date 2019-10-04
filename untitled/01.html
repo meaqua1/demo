@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+    <img id="coll" onclick="fun();" src="../collection_pic.jpg">
+    <img id="coll2" src="../collection_pic.jpg">
+    <h1 id="h1">你好啊</h1>
+
+
+
+
+
+    <!--<script>
+        /*var light = document.getElementById("coll");
+        alert(light);
+        light.src="img/ccc.png";*/
+
+        var h1 = document.getElementById("h1");
+        alert("111")
+        h1.innerHTML = "我不好";
+
+    </script>-->
+
+    <script>
+        function fun() {
+            var light = document.getElementById("coll");
+            light.src="img/ccc.png";
+        }
+        function fun2() {
+            if (flag) {
+                light.src="img/ccc.png";
+                flag = false;
+            }else {
+                light.src="img/collection_pic.jpg"
+                flag = true;
+            }
+        }
+        var light = document.getElementById("coll2");
+        light.onclick = fun2;
+        var flag = true;
+    </script>
+
+</body>
+</html>

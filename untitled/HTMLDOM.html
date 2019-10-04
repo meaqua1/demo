@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d1{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        aaa
+    </div>
+    <div id="div1">
+        div1
+    </div>
+    <div id="div2">
+        div2
+    </div>
+
+    <script>
+        var div = document.getElementById("div");
+        var innerHTML = div.innerHTML;
+        document.write(innerHTML);
+        div.innerHTML += "<input>";
+
+        var div1 = document.getElementById("div1");
+        div1.onclick=function (ev) {
+            this.style.width = "200px";
+            this.style.fontSize="25px";
+            this.style.border = "1px solid blue";
+        }
+        var div2 = document.getElementById("div2");
+        div2.onclick=function (ev) {
+            /*div2.setAttribute("style","border: 1px solid red");*/
+            this.className = "d1";
+
+        }
+
+    </script>
+
+</body>
+</html>

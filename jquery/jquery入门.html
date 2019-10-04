@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(function () {
+            div1.click(function () { //单击事件
+                div1.css("backgroundColor","pink")
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div1">div1...</div>
+    <div id="div2">div2...</div>
+
+    <script>
+        var div1 = $("#div1");
+        var divs = $("div");
+
+        alert(div1.html());
+
+        alert(divs.length);
+        divs.html("bbb");
+
+
+    </script>
+</body>
+</html>

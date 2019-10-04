@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var person = {name:"张三",age:23,sex:"男"};
+
+        for (var personKey in person) {
+            alert(personKey+":"+person[personKey])
+        }
+        var person2 = {persons: [
+            {name:"张三",age:23,sex:"男"},
+            {name:"张三",age:23,sex:"男"}
+        ]};
+        alert(person2.persons[0].name)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

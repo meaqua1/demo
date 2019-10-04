@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img id="pic" width="100%" height="164" src="img/collection_pic.jpg">
+    <input type="button" id="but" value="刷新">
+    <input type="button" id="but1" value="百度">
+
+    <script>
+        var pic = document.getElementById("pic");
+        function f() {
+            if (flag) {
+                pic.src="img/ccc.png";
+                flag=false;
+            }else {
+                pic.src="img/collection_pic.jpg";
+                flag=true;
+            }
+        }
+        var flag=true;
+        setInterval(f,4000);
+
+        var but = document.getElementById("but");
+        but.onclick = function (ev) {
+            location.reload();
+        }
+        var href = location.href;
+        alert(href);
+
+        var but1 = document.getElementById("but1");
+        but1.onclick=function (ev) {
+            location.href="https://www.baidu.com";
+        }
+
+    </script>
+</body>
+</html>

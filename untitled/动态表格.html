@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table{
+            border: 1px solid;
+            border-collapse: collapse;/*边框变成单实线*/
+            margin: auto;
+            width: 500px;
+        }
+        td{
+            text-align: center;
+            border: 1px solid;
+        }
+        div{
+            text-align: center;
+            margin: 50px;
+        }
+        input{
+            text-align: center;
+        }
+        .over{
+            background-color: pink;
+        }
+        .out{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input id="id" placeholder="请输入编号">
+        <input id="name" placeholder="请输入姓名">
+        <input id="sex" placeholder="请输入性别">
+        <input id="but" type="button" value="确认">
+    </div>
+    <table id="table">
+        <caption>学生信息表</caption>
+        <tr>
+            <td><input type="checkbox" name="cb" id="fcb"></td>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cb"></td>
+            <td>1</td>
+            <td>令狐冲</td>
+            <td>男</td>
+            <td><a href="javascript:void (0)" onclick="del(this)">删除</a></td>
+        </tr>
+
+    </table>
+    <div>
+        <input type="button" value="全选" id="qx">
+        <input type="button" value="全不选" id="qbx">
+        <input type="button" value="反选" id="fx">
+    </div>
+
+
+    <script>
+        var but = document.getElementById("but");
+        /*but.onclick=function (ev) {
+            //获取文本框内容
+            var id = document.getElementById("id").value;
+            var text_id = document.createTextNode(id);
+            var td_id = document.createElement("td");
+            td_id.appendChild(text_id);
+            var name = document.getElementById("name").value;
+            var text_name = document.createTextNode(name);
+            var td_name = document.createElement("td");
+            td_name.appendChild(text_name);
+            var sex = document.getElementById("sex").value;
+            var text_sex = document.createTextNode(sex);
+            var td_sex = document.createElement("td");
+            td_sex.appendChild(text_sex);
+
+            var td_a = document.createElement("td");
+            var a = document.createElement("a");
+            a.setAttribute("href","javascript:void (0)");
+            a.setAttribute("onclick","del(this)");
+            var text_a = document.createTextNode("删除");
+            a.appendChild(text_a);
+            td_a.appendChild(a);
+
+            var tr = document.createElement("tr");
+            tr.appendChild(td_id);
+            tr.appendChild(td_name);
+            tr.appendChild(td_sex);
+            tr.appendChild(td_a);
+            var table = document.getElementById("table");
+            table.appendChild(tr);
+
+
+        }*/
+        but.onclick=function (ev) {
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var sex = document.getElementById("sex").value;
+            var table = document.getElementById("table");
+            table.innerHTML+="<tr>\n" +
+                "            <td>"+"<input type=\"checkbox\" name=\"cb\">"+"</td>\n" +
+                "            <td>"+id+"</td>\n" +
+                "            <td>"+name+"</td>\n" +
+                "            <td>"+sex+"</td>\n" +
+                "            <td><a href=\"javascript:void (0)\" onclick=\"del(this)\">删除</a></td>\n" +
+                "        </tr>"
+
+        }
+        function del(obj) {
+            var table = obj.parentNode.parentNode.parentNode;
+            var tr = obj.parentNode.parentNode;
+            table.removeChild(tr);
+        }
+
+        window.onload = function (ev) {
+            var cbs = document.getElementsByName("cb");
+            document.getElementById("qx").onclick = function (ev1) {
+                for (var i = 0; i < cbs.length; i++) {
+                    cbs[i].checked = true;
+                }
+            }
+            document.getElementById("qbx").onclick = function (ev2) {
+                for (var i = 0; i < cbs.length; i++) {
+                    cbs[i].checked = false;
+                }
+            }
+
+            document.getElementById("fx").onclick = function (ev3) {
+                for (var i = 0; i < cbs.length; i++) {
+
+                    cbs[i].checked = !cbs[i].checked;
+                }
+            }
+            document.getElementById("fcb").onclick = function (ev4) {
+                for (var i = 0; i < cbs.length; i++) {
+
+                    cbs[i].checked = this.checked;
+                }
+            }
+
+            var trs = document.getElementsByTagName("tr");
+            for (var i = 0; i < trs.length; i++) {
+                trs[i].onmouseover = function () {
+                    this.className = "over";
+                }
+                trs[i].onmouseout = function () {
+                    this.className = "out" ;
+                }
+            }
+
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

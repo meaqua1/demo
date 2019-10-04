@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <input type="button" id="but" value="别点我">
+    <input type="button" id="but2" value="关闭本窗口">
+    <input type="button" id="but3" value="关闭打开窗口">
+
+    <script>
+        var flag = confirm();
+        alert(flag);
+        var s = prompt("请输入");
+        document.write(s);
+
+        var but = document.getElementById("but");
+        var but2 = document.getElementById("but2");
+        var but3 = document.getElementById("but3");
+        but.onclick=function () {
+            newwindow = open("https://www.baidu.com");
+        };
+        but2.onclick=function (ev) {
+            window.close();
+        };
+        but3.onclick=function (ev) {
+            newwindow.close();
+        };
+
+        //setTimeout(fun,5000);
+ //     循环定时器
+        var id = setInterval(fun,2000);
+        //取消定时器
+        clearInterval(id);
+        function fun() {
+            alert('boom');
+        }
+
+    </script>
+</body>
+</html>
